@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Registration form</h1>
+    <h2 id="msg" style="color: red"></h2>
+    <form name="From" method="get" action="">
+      <table>
+        <tr>
+          <td>Name</td>
+          <td><input name="Full-name" type="text" /></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input name="Email" type="email" /></td>
+        </tr>
+        <tr>
+          <td>passwor</td>
+          <td><input name="pass" type="password" /></td>
+        </tr>
+        <tr>
+          <td>corect pass</td>
+          <td><input name="confrim" type="password" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="submit" name="submit-bt" value="registration" /></td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      var registratio_form = document.forms["From"];
+      var msg = document.querySelector("#msg");
+
+      registratio_form.onsubmit = function (event) {
+        event.preventDefault();
+        var va = registratio_form["Full-name"].value;
+        var va2 = registratio_form["Email"].value;
+        var v3 = registratio_form["pass"].value;
+        var v4 = registratio_form["confrim"].value;
+        var v5 = registratio_form["submit-bt"].value;
+        v7 = v4.length;
+
+        if (v3 != v4) {
+          msg.innerHTML = "dosen't match";
+        } else if (v3.length < 8) {
+          msg.innerHTML = "passward length must be 8";
+        } else {
+          msg.innerHTML = "mathc";
+        }
+
+        console.log(va);
+        console.log(va2);
+        console.log(v3);
+        console.log(v4);
+        console.log(v5);
+        console.log(v7);
+      };
+    </script>
+  </body>
+</html>
